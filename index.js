@@ -3,6 +3,7 @@ const Busquedas = require('./models/busquedas');
 
 require('colors')
 console.log("Hola mundo");
+
 const main = async()=>{
     
     
@@ -10,17 +11,21 @@ const main = async()=>{
         opt = await inquirerMenu();
         console.clear();
         switch (opt) {
+            
             case 1:
                 const lugar = await leerImput('Ciudad: ');
-                console.log(lugar);
+                const busquedas = new Busquedas();
+                await busquedas.ciudad(lugar);
             //Mostrar mensaje y mostrar ciudad, mostrar clima
                console.log('\nInformación de la ciudad\n'.green);
-               console.log('Ciudad')
-               console.log('Lat: ')
-               console.log('Lng: ')
-               console.log('Ciudad')
+               console.log('Ciudad');
+               console.log('Lat: ');
+               console.log('Lng: ');
+               console.log('Temperatura: ');
+               console.log('Mínima: ');
+               console.log('Máxima: ');
             break;
-            case 1:
+            case 2:
                 
                 break;
 
