@@ -22,12 +22,12 @@ const preguntas = [
     ],
   },
 ];
-const listadoTareasPorBorrar = async (tareas = []) => {
-  const choices = tareas.map((tarea, i) => {
+const listadoLugares = async (lugares = []) => {
+  const choices = lugares.map((lugar, i) => {
     const idx = `${i + 1}.`.green;
     return {
-      value: tarea.id,
-      name: `${idx} ${tarea.desc}`,
+      value: lugar.id,
+      name: `${idx} ${lugar.nombre}`,
     };
   });
 
@@ -39,7 +39,7 @@ const listadoTareasPorBorrar = async (tareas = []) => {
     {
       type: "list",
       name: "id",
-      message: "Borrar ",
+      message: "Seleccionar lugar: ",
       choices,
     },
   ];
@@ -103,13 +103,13 @@ const leerImput = async (message) => {
   return desc;
 };
 
-const mostrarListadoCheckList = async (tareas = []) => {
-  const choices = tareas.map((tarea, i) => {
+const mostrarListadoCheckList = async (lugars = []) => {
+  const choices = lugars.map((lugar, i) => {
     const idx = `${i + 1}.`.green;
     return {
-      value: tarea.id,
-      name: `${idx} ${tarea.desc}`,
-      checked: (tarea.completadoEn) ? true : false
+      value: lugar.id,
+      name: `${idx} ${lugar.desc}`,
+      checked: (lugar.completadoEn) ? true : false
     };
   });
 
@@ -131,7 +131,7 @@ module.exports = {
   inquirerMenu,
   pausa,
   leerImput,
-  listadoTareasPorBorrar,
+  listadoLugares,
   confirmar,
   mostrarListadoCheckList
 };
