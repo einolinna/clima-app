@@ -44,7 +44,7 @@ const main = async () => {
         console.log("Minima: ", ` ${parseInt(clima.temp_min)}°`.yellow);
         break;
       case 2:
-        busquedas.historial.forEach((lugar, i) => {
+        busquedas.historialCapitalizado.forEach((lugar, i) => {
           const idx = `${i + 1}.`.green;
           console.log(`${idx} ${lugar}`.green);
         })
